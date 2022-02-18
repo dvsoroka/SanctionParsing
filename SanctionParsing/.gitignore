@@ -1,0 +1,25 @@
+settings.py
+
+*.log
+*.dll
+*.lib
+*.exe
+# *.so
+*.pid
+/.env
+/.idea
+Thumbs.db
+__pycache__
+/__pycache__
+__pycache__/
+media/
+django_cache
+/venv/
+/.venv/
+config.py
+/.vscode/
+unzipped_xml
+source_data
+download
+*.zip
+db.sqlite3

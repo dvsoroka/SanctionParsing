@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-fz08@2mga7rh$@mlxao5e!0omu#ws!0$)hlq5r@&0bp6hh-v-$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'ipa.dataocean.us',
+    'localhost',
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -37,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
+    'polls',
 ]
 
 MIDDLEWARE = [
@@ -74,9 +80,17 @@ WSGI_APPLICATION = 'SanctionParsing.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "sanctions",
+        "USER": "sanctions_user",
+        "PASSWORD": "0ce@#22",
+        "HOST": "127.0.0.01",
+        "PORT": "5432",
+        'CONN_MAX_AGE': 60 * 10,  # 10 minutes
     }
 }
 
